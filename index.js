@@ -124,7 +124,11 @@ export default class extends Component {
       this.setState({ scrubbing: true }, this.scaleUp);
     } else if (event.nativeEvent.state === State.ACTIVE) {
       this.panResonderMoved = true;
-    } else if (event.nativeEvent.state === State.END) {
+    } else if (
+      event.nativeEvent.state === State.END ||
+      event.nativeEvent.state === State.FAILED ||
+      event.nativeEvent.state === State.CANCELLED
+    ) {
       const { dimensionWidth } = this.state;
       const { totalDuration } = this.props;
 
