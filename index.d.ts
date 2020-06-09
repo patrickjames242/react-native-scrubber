@@ -1,7 +1,9 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import { TextStyle } from "react-native";
+import { PanGestureHandler } from "react-native-gesture-handler";
 
 interface ScrubberProps {
+  panGestureRef?: React.Ref<PanGestureHandler>;
   value?: number;
   bufferedValue?: number;
   totalDuration?: number;

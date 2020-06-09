@@ -331,6 +331,7 @@ export default class extends Component {
             ]}
           />
           <PanGestureHandler
+          	ref={this.props.panGestureRef}
             onGestureEvent={this._onGestureEvent}
             onHandlerStateChange={this._onHandlerStateChange}
             minDist={0}
