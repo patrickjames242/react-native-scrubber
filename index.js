@@ -121,6 +121,10 @@ export default class extends Component {
       this._translateX.setOffset(boundedX);
       this._translateX.setValue(0);
 
+      if (this.props.onSlidingStarted instanceof Function){
+        this.props.onSlidingStarted()
+      }
+
       this.setState({ scrubbing: true }, this.scaleUp);
     } else if (event.nativeEvent.state === State.ACTIVE) {
       this.panResonderMoved = true;
